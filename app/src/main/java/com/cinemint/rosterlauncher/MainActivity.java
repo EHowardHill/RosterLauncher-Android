@@ -2,6 +2,7 @@
 
 package com.cinemint.rosterlauncher;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -173,12 +174,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void refreshFragments() {
         if (pagerAdapter != null) {
             pagerAdapter.notifyDataSetChanged();
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void notifyAllFragments() {
         // Force immediate update of all fragments
         if (pagerAdapter != null) {
